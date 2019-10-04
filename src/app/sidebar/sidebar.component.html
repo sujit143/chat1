@@ -1,0 +1,25 @@
+<mat-toolbar  color="green">
+  <button pButton type="button" (click)="visibleSidebar1 = true" (mouseenter) ="mouseEnter()" ><i class="fa fa-menu" ></i>Task ☰</button>
+  <h2>SkyCliff IT</h2>
+</mat-toolbar>
+
+<p-sidebar [(visible)]="visibleSidebar1" [baseZIndex]="10000" class="bg-dark" >
+      <h1><b>Menu</b></h1>
+    <a [routerLink]="['']" [routerLinkActive]="['router-link-active']" (click)="visibleSidebar1=false">
+      <i class="fa fa-fw fa-dashboard"></i>&nbsp;
+      home
+    </a><br><br>
+    <a [routerLink]="['/empdetail']" [routerLinkActive]="['router-link-active']">
+      <i class="fa fa-file-o"></i>&nbsp;
+      Employee Details<br><br></a>
+    <a [routerLink]="['/about']" [routerLinkActive]="['router-link-active']" >
+      <i class="fa fa-book"></i>&nbsp;
+      About Us
+    </a><br><br>
+    <a [routerLink]="['/contact']" [routerLinkActive]="['router-link-active']" >
+      <i class="fa fa-phone"></i>&nbsp;
+      Contact Us
+    </a><br><br>
+  </p-sidebar>
+
+
