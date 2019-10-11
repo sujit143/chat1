@@ -1,5 +1,5 @@
  <app-sidebar></app-sidebar>
-  <h1> EMP DETAILS</h1>
+  <!-- <h1> EMP DETAILS</h1> -->
 
   <div>
       <img src="assets/19.jpg">
@@ -28,8 +28,8 @@
     <tbody>
       <tr *ngFor="let item of arr | paginate: config">
         <td>{{item.id}}</td>
-        <td>{{item.name}}</td>
-        <td>{{item.description}}</td>
+        <td>{{item.name | lowercase}}</td>
+        <td>{{item.description | uppercase}}</td>
         <td><button class="btn btn-danger" (click)="onEmpDel(item.id)">Delete</button>&nbsp;&nbsp;
           <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal1"
             (click)="editemployeeget(item)">Edit</button>

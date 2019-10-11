@@ -1,0 +1,32 @@
+/* p{
+  margin-top:50px;
+} */
+
+img {
+  inline-size: -webkit-fill-available;
+}
+footer.page-footer.font-small.blue.pt-4 {
+  background-color: rgb(34, 34, 105);
+  color: rgb(248, 240, 240);
+  position: inherit;
+}
+.jumbotron {
+  background-color: #f4511e;
+  color: #fff;
+  padding: 100px 25px;
+}
+.container-fluid {
+  padding: 60px 50px;
+}
+.bg-grey {
+  background-color: #f6f6f6;
+}
+.logo {
+  font-size: 200px;
+}
+@media screen and (max-width: 768px) {
+  .col-sm-4 {
+    text-align: center;
+    margin: 25px 0;
+  }
+}

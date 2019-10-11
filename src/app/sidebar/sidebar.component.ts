@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserdataService } from '../userdata.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -9,7 +10,7 @@ export class SidebarComponent implements OnInit {
 
   visibleSidebar1;
 
-  constructor() { }
+  constructor(private _userdata:UserdataService) { }
 
   ngOnInit() {
   }
@@ -17,5 +18,10 @@ export class SidebarComponent implements OnInit {
     console.log("mouse working");
     this.visibleSidebar1 = true;
  }
-
+ onLogOut(){
+  this._userdata.logout();
+}
+isLoggedIn(){
+  return this._userdata.isLoggedIn;
+}
 }

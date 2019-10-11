@@ -1,0 +1,156 @@
+<app-sidebar></app-sidebar>
+<!-- demo start -->
+
+<div class="jumbotron text-center">
+  <h2>Company</h2>
+  <p>We specialize in YourDR's</p>
+  <form class="form-inline">
+    <!-- <div class="input-group">
+      <input style="text-align: center;" type="email" class="form-control" size="50" placeholder="Email Address" required>
+      <div class="input-group-btn">
+        <button type="button" class="btn btn-danger">Subscribe</button>
+      </div>
+    </div> -->
+  </form>
+</div>
+
+
+
+<!-- Captcha Satrt -->
+
+<!--
+<p-toast [style]="{marginTop: '80px'}"></p-toast>
+
+<p-captcha siteKey="6Lf2XQkTAAAAANcvOwYqPxWL4iZDksFqHpS39GDA" (onResponse)="showResponse($event)"></p-captcha>
+<script src="https://www.google.com/recaptcha/api.js?render=explicit&onload=initRecaptcha" async defer></script> -->
+
+
+<!-- Captcha End -->
+
+<!-- Task Start -->
+
+<p-toast [style]="{marginTop: '80px'}"></p-toast>
+
+<p-table [columns]="cols" [value]="arr" [(contextMenuSelection)]="selectedCar" [contextMenu]="cm">
+    <ng-template pTemplate="header" let-columns>
+        <tr>
+            <th *ngFor="let col of columns">
+                {{col.header}}
+            </th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-rowData let-columns="columns">
+        <tr [pContextMenuRow]="rowData">
+            <td *ngFor="let col of columns">
+                {{rowData[col.field]}}
+            </td>
+        </tr>
+    </ng-template>
+</p-table>
+
+<p-contextMenu #cm [model]="items"></p-contextMenu>
+
+
+<!-- Task End -->
+
+
+
+
+
+
+<!-- Container (About Section) -->
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-8">
+      <h2>About Company Page</h2>
+      <h4>YourDR's</h4>
+      <p>YourDR's</p>
+      <button class="btn btn-default btn-lg">Get in Touch</button>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-signal logo"></span>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid bg-grey">
+  <div class="row">
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-globe logo"></span>
+    </div>
+    <div class="col-sm-8">
+      <h2>Our Values</h2>
+      <h4><strong>MISSION:</strong> Our mission YourDR's</h4>
+      <p><strong>VISION:</strong> Our vision YourDR's</p>
+    </div>
+  </div>
+</div>
+
+<!-- Container (Services Section) -->
+<div class="container-fluid text-center">
+  <h2>SERVICES</h2>
+  <h4>What we offer</h4>
+  <br>
+  <div class="row">
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-off"></span>
+      <h4>POWER</h4>
+      <p>Lorem ipsum dolor sit amet..</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-heart"></span>
+      <h4>LOVE</h4>
+      <p>Lorem ipsum dolor sit amet..</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-lock"></span>
+      <h4>JOB DONE</h4>
+      <p>Lorem ipsum dolor sit amet..</p>
+    </div>
+  </div>
+  <br><br>
+  <div class="row">
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-leaf"></span>
+      <h4>GREEN</h4>
+      <p>Lorem ipsum dolor sit amet..</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-certificate"></span>
+      <h4>CERTIFIED</h4>
+      <p>Lorem ipsum dolor sit amet..</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-wrench"></span>
+      <h4 style="color:#303030;">HARD WORK</h4>
+      <p>Lorem ipsum dolor sit amet..</p>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- demo end -->
+
+
+
+
+
+
+<!-- Footer -->
+
+<footer class="page-footer font-small blue pt-4">
+  <div class="">
+      <div class="container">
+          <div class="row">
+              <div class="col-md-3 footer-center text-left"> <img width="20px" src="assets/logo.png" alt=""> </div>
+              <div class="col-md-6 footer-left text-left text-center">
+                  © 2018 All Rights Reserved for Skycliff IT PVT. LTD
+              </div>
+              <i class="fa fa-facebook text-xs circle"></i>
+          </div>
+      </div>
+  </div>
+</footer>
+
+<!-- Footer -->

@@ -5,7 +5,7 @@
 
 <p-sidebar [(visible)]="visibleSidebar1" [baseZIndex]="10000" class="bg-dark" >
       <h1><b>Menu</b></h1>
-    <a [routerLink]="['']" [routerLinkActive]="['router-link-active']" (click)="visibleSidebar1=false">
+    <a [routerLink]="['/home']" [routerLinkActive]="['router-link-active']" (click)="visibleSidebar1=false">
       <i class="fa fa-fw fa-dashboard"></i>&nbsp;
       home
     </a><br><br>
@@ -20,6 +20,15 @@
       <i class="fa fa-phone"></i>&nbsp;
       Contact Us
     </a><br><br>
+    <a [routerLink]="['/pipe']" [routerLinkActive]="['router-link-active']" >
+      <i class="fa fa-table"></i>&nbsp;
+      PrimeNG Table
+    </a><br><br>
+    <a [routerLink]="['']" [routerLinkActive]="['router-link-active']" >
+      <i class="fa fa-dashboard"></i>&nbsp;
+      Login Page
+    </a><br><br>
   </p-sidebar>
 
-
+  <li *ngIf="!isLoggedIn()" routerLinkActive="active"><a  routerLink="/login">Login</a></li>
+  <li *ngIf="isLoggedIn()" routerLinkActive="active"><a (click)="onLogOut()" >Log Out</a></li>

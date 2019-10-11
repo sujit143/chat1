@@ -32,4 +32,6 @@ mat-toolbar.mat-toolbar.mat-green.mat-toolbar-single-row {
   position: fixed;
   background-color: rgb(28, 29, 24);
   color: rgb(243, 174, 45);
+  z-index: 2000;
+  margin-top: 0px;
 }

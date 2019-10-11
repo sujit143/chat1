@@ -96,7 +96,7 @@ onCollegeSave(f:NgForm)
       }
 
     );
-    alert("College added");
+    alert("Employee added");
   });
 }
 search(value) {
