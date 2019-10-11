@@ -21,6 +21,7 @@ import {ToastModule} from 'primeng/toast';
 import {ContextMenuModule} from 'primeng/primeng';
 import {CaptchaModule} from 'primeng/captcha';
 import { LoginComponent } from './login/login.component';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
 
 
 
@@ -52,7 +53,8 @@ import { LoginComponent } from './login/login.component';
     ToastModule,
     ContextMenuModule,
     CaptchaModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CarouselModule
 
   ],
   providers: [MessageService],

@@ -1,6 +1,8 @@
 <mat-toolbar  color="green">
   <button pButton type="button" (click)="visibleSidebar1 = true" (mouseenter) ="mouseEnter()" ><i class="fa fa-menu" ></i>Task ☰</button>
   <h2>SkyCliff IT</h2>
+  <h3>{{todaydate | date:'d/M/y'}}</h3><br/>
+  <h3>{{todaydate | date:'HH:mm:ss'}}</h3>
 </mat-toolbar>
 
 <p-sidebar [(visible)]="visibleSidebar1" [baseZIndex]="10000" class="bg-dark" >
@@ -27,6 +29,10 @@
     <a [routerLink]="['']" [routerLinkActive]="['router-link-active']" >
       <i class="fa fa-dashboard"></i>&nbsp;
       Login Page
+    </a><br><br>
+    <a [routerLink]="['/nav']" [routerLinkActive]="['router-link-active']" >
+      <i class="fa fa-link"></i>&nbsp;
+      Title
     </a><br><br>
   </p-sidebar>
 

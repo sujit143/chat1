@@ -7,10 +7,15 @@ import { UserdataService } from '../userdata.service';
   styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent implements OnInit {
-
+  todaydate = new Date();
   visibleSidebar1;
 
-  constructor(private _userdata:UserdataService) { }
+  constructor(private _userdata : UserdataService) {
+    setInterval(() => {
+      this.todaydate = new Date();
+      }, 1);
+      // setTimeout(()=>{ this.todaydate = new Date(); }, 3000);
+  }
 
   ngOnInit() {
   }
