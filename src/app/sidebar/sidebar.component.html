@@ -34,6 +34,18 @@
       <i class="fa fa-link"></i>&nbsp;
       Title
     </a><br><br>
+    <a [routerLink]="['/ngtable']" [routerLinkActive]="['router-link-active']" >
+      <i class="fa fa-bus"></i>&nbsp;
+      NgTable
+    </a><br><br>
+    <a [routerLink]="['/context']" [routerLinkActive]="['router-link-active']" >
+      <i class="fa fa-money"></i>&nbsp;
+      Context
+    </a><br><br>
+    <a [routerLink]="['/mdbtable']" [routerLinkActive]="['router-link-active']" >
+      <i class="fa fa-table"></i>&nbsp;
+      MdbTable
+    </a><br><br>
   </p-sidebar>
 
   <li *ngIf="!isLoggedIn()" routerLinkActive="active"><a  routerLink="/login">Login</a></li>

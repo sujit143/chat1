@@ -57,7 +57,7 @@ pageChange(newPage: number) {
     }
     );
     }
-      editemployeeget(item)
+  editemployeeget(item)
   {
      this.id=item.id;
      this.name=item.name;

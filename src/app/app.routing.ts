@@ -6,6 +6,9 @@ import { ContactComponent } from './contact/contact.component';
 import { PipeComponent } from './pipe/pipe.component';
 import { LoginComponent } from './login/login.component';
 import { NavComponent } from './nav/nav.component';
+import { NgtableComponent } from './ngtable/ngtable.component';
+import { ContextComponent } from './context/context.component';
+import { MdbtableComponent } from './mdbtable/mdbtable.component';
 
 
 const arr : Routes=[
@@ -16,7 +19,10 @@ const arr : Routes=[
   {path:'about',component:AboutComponent},
   {path:'contact',component:ContactComponent},
   {path:'pipe',component:PipeComponent},
-  {path:'',component:LoginComponent}
+  {path:'',component:LoginComponent},
+  {path:'ngtable',component:NgtableComponent},
+  {path:'context',component:ContextComponent},
+  {path:'mdbtable',component:MdbtableComponent}
 
 ];
 

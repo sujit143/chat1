@@ -30,3 +30,6 @@ footer.page-footer.font-small.blue.pt-4 {
     margin: 25px 0;
   }
 }
+.container-fluid.text-center.bg-grey {
+  background-color: white;
+}

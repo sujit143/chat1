@@ -1,19 +1,9 @@
-button.btn.btn-primary.float-right {
-  float: right;
-}
-h1{
-  background: rgb(255, 0, 76);
-  text-transform: uppercase;
-  text-align: center;
-  color: yellow;
-}
-
 img {
   inline-size: -webkit-fill-available;
-  width: 100%;
 }
 footer.page-footer.font-small.blue.pt-4 {
   background-color: rgb(34, 34, 105);
   color: rgb(248, 240, 240);
   position: inherit;
+  margin-top: 490px;
 }

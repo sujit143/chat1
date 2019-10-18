@@ -40,3 +40,6 @@ h3 {
   margin-left: 455px;
   color: blanchedalmond;
 }
+.container-fluid.text-center.bg-grey {
+  background-color: white;
+}

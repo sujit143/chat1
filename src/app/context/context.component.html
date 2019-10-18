@@ -1,0 +1,203 @@
+<app-sidebar></app-sidebar>
+<!-- <p class="h1">context works!</p> -->
+<h1>context</h1>
+
+
+
+<!-- start -->
+<ngb-carousel *ngIf="images">
+  <ng-template ngbSlide>
+    <div class="picsum-img-wrapper">
+      <img [src]="images[0]" alt="Random first slide" width="800" height="700">
+    </div>
+    <div class="carousel-caption">
+      <h3>First slide label</h3>
+      <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+    </div>
+  </ng-template>
+  <ng-template ngbSlide>
+    <div class="picsum-img-wrapper">
+      <img [src]="images[1]" alt="Random second slide" width="800" height="700">
+    </div>
+    <div class="carousel-caption">
+      <h3>Second slide label</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+  </ng-template>
+  <ng-template ngbSlide>
+    <div class="picsum-img-wrapper">
+      <img [src]="images[2]" alt="Random third slide" width="800" height="700">
+    </div>
+    <div class="carousel-caption">
+      <h3>Third slide label</h3>
+      <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+    </div>
+  </ng-template>
+</ngb-carousel>
+
+<!-- end -->
+
+
+<!-- <div class="container">
+<table class="table table-striped table-dark">
+    <thead>
+      <th>EMP Id</th>
+      <th>EMP Name</th>
+      <th>EMP Description</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of arr">
+        <td>{{item.id}}</td>
+        <td>{{item.name}}</td>
+        <td>{{item.description}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div> -->
+
+<div class="container">
+
+
+
+<p>Right-click on the items below to show the context menu:</p>
+<table  mat-table [dataSource]="dataSource" class="table table-striped table-dark">
+	<ng-container matColumnDef="id">
+		<th mat-header-cell *matHeaderCellDef> <b>Id</b> </th>
+		<td mat-cell *matCellDef="let item" (contextmenu)="onContextMenu($event, item)">
+      {{item.id}}
+    </td>
+  </ng-container>
+  <ng-container matColumnDef="name">
+		<th mat-header-cell *matHeaderCellDef> <b>Name</b> </th>
+		<td mat-cell *matCellDef="let item" (contextmenu)="onContextMenu($event, item)">
+      {{item.name}}
+    </td>
+    </ng-container>
+    <ng-container matColumnDef="description">
+		<th mat-header-cell *matHeaderCellDef> <b>Description</b> </th>
+		<td mat-cell *matCellDef="let item" (contextmenu)="onContextMenu($event, item)">
+      {{item.description}}
+		</td>
+  </ng-container>
+	<tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+<!-- <button class="btn btn-danger" (click)="onEmpDel(item.id)">Delete</button>&nbsp;&nbsp; -->
+<div style="visibility: hidden; position: fixed"
+  [style.left]="contextMenuPosition.x"
+  [style.top]="contextMenuPosition.y"
+  [matMenuTriggerFor]="contextMenu">
+</div>
+<mat-menu #contextMenu="matMenu">
+	<ng-template matMenuContent let-item="item">
+		<button type="button" class="btn btn-danger" mat-menu-item (click)="onContextMenuAction1(item.id)">Delete</button>
+    <button   class="btn btn-info" data-toggle="modal" data-target="#myModal">Add</button>
+    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal1" mat-menu-item (click)="editemployeeget(item)">Edit </button>
+	</ng-template>
+</mat-menu>
+</div>
+
+
+
+
+<!-- popup edit start -->
+
+<div class="modal fade" id="myModal1" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="container">
+
+
+        <form (ngSubmit)="UpdateEmployee(f1)" #f1="ngForm">
+          <h2 style="margin-left: 80px">Edit Employee</h2>
+          <div class="form-group">
+            <label>Employee ID</label>
+            <input name="id" [(ngModel)]="id" class="form-control" style="width: 450px" type="text">
+
+          </div>
+          <div class="form-group">
+            <label>Employee Name</label>
+            <input name="name" [(ngModel)]="name" class="form-control" style="width: 450px" type="text">
+
+          </div>
+          <div class="form-group">
+            <label>description</label>
+            <input name="description" [(ngModel)]="description" class="form-control" style="width: 450px" type="text">
+
+          </div>
+
+          <div class="form-group">
+            <button type="submit" style="width: 100px" class="form-control btn btn-primary">Update</button>&nbsp;
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          </div>
+        </form>
+      </div>
+      <!-- <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div> -->
+    </div>
+
+  </div>
+</div>
+
+<!-- popup edit end -->
+
+<!-- popup add start -->
+
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="container">
+
+
+          <form (ngSubmit)="onCollegeSave(f)" #f="ngForm">
+            <h2 style="margin-left: 120px">Add Employee</h2>
+            <div class="form-group">
+              <label>Name</label>
+              <input name="name" ngModel class="form-control" style="width: 450px" type="text"
+                placeholder="Enter Name">
+
+            </div>
+            <div class="form-group">
+              <label>Description</label>
+              <input name="description" ngModel class="form-control" style="width: 450px" type="text"
+                placeholder="Enter Description ">
+
+            </div>
+
+            <div class="form-group">
+              <button type="submit" style="width: 100px" class="form-control btn btn-primary">Save</button>&nbsp;
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+          </form>
+        </div>
+        <!-- <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div> -->
+      </div>
+
+    </div>
+  </div>
+
+<!-- popup add end -->
+
+
+<!-- Footer Start -->
+<footer class="page-footer font-small blue pt-4">
+  <div class="">
+      <div class="container">
+          <div class="row">
+              <div class="col-md-3 footer-center text-left"> <img src="assets/logo.png" alt=""> </div>
+              <div class="col-md-6 footer-left text-left text-center">
+                  © 2018 All Rights Reserved for Skycliff IT PVT. LTD
+              </div>
+              <i class="fa fa-facebook text-xs circle"></i>
+          </div>
+      </div>
+  </div>
+</footer>
+<!-- Footer End -->

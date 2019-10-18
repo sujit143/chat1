@@ -22,6 +22,17 @@ import {ContextMenuModule} from 'primeng/primeng';
 import {CaptchaModule} from 'primeng/captcha';
 import { LoginComponent } from './login/login.component';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { DialogModule } from 'primeng/primeng';
+// import {NgbdCarouselBasicModule} from './app/carousel-basic.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgtableComponent } from './ngtable/ngtable.component';
+import { ContextComponent } from './context/context.component';
+// import { NgbdSortableHeader } from './sortable.directive';
+// import { NgbdTableComplete } from './table-complete';
+import {MatMenuModule, MatTableModule } from '@angular/material';
+import { MdbtableComponent } from './mdbtable/mdbtable.component';
+import { ToastrModule } from 'ngx-toastr';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 
 
@@ -37,7 +48,10 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
     ContactComponent,
     PipeComponent,
     ReversePipe,
-    LoginComponent
+    LoginComponent,
+    NgtableComponent,
+    ContextComponent,
+    MdbtableComponent
   ],
 
   imports: [
@@ -54,7 +68,16 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
     ContextMenuModule,
     CaptchaModule,
     ReactiveFormsModule,
-    CarouselModule
+    CarouselModule,
+    DialogModule,
+    NgbModule,
+    MatMenuModule,
+    MatTableModule,
+    ToastrModule.forRoot(),
+    MDBBootstrapModule
+    // NgbdSortableHeader,
+    // NgbdTableComplete
+    // NgbdCarouselBasicModule
 
   ],
   providers: [MessageService],

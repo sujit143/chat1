@@ -16,8 +16,8 @@ export class UserdataService {
   currentUser;
   redirectURL: string;
   login(user_email: string, user_password: string) {
-    debugger;
-    if (user_email =='admin' && user_password == '1234') {
+    // debugger;
+    if (user_email =='sujit' && user_password == '143') {
 
   this._router.navigate(['/empdetail']);
 }

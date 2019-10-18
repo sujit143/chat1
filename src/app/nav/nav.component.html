@@ -1,4 +1,14 @@
 <app-sidebar></app-sidebar>
+
+
+
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
 <!-- <div class="text">
 <h1> HI </h1>
 </div> -->
@@ -48,7 +58,7 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
       <div class="item active">
-        <img src="assets/21.jpg" alt="New York" width="800" height="700">
+        <img src="assets/21.jpg" alt="New York" width="400" height="700">
         <div class="carousel-caption">
           <h3>New York</h3>
           <p>The atmosphere in New York is lorem ipsum.</p>
@@ -56,7 +66,7 @@
       </div>
 
       <div class="item">
-        <img src="assets/22.jpg" alt="Chicago" width="800" height="700">
+        <img src="assets/22.jpg" alt="Chicago" width="400" height="700">
         <div class="carousel-caption">
           <h3>Chicago</h3>
           <p>Thank you, Chicago - A night we won't forget.</p>
@@ -64,7 +74,7 @@
       </div>
 
       <div class="item">
-        <img src="assets/23.jpg" alt="Los Angeles" width="800" height="700">
+        <img src="assets/23.jpg" alt="Los Angeles" width="400" height="700">
         <div class="carousel-caption">
           <h3>LA</h3>
           <p>Even though the traffic was a mess, we had the best time playing at Venice Beach!</p>
@@ -82,6 +92,97 @@
       <span class="sr-only">Next</span>
     </a>
 </div>
+
+
+<!-- Table Start -->
+
+<p-table [columns]="cols" [value]="arr" selectionMode="single" [(selection)]="selectedCar" (onRowSelect)="onRowSelect($event)" [paginator]="true" [rows]="15">
+  <ng-template pTemplate="caption">
+      List of Cars
+  </ng-template>
+  <ng-template pTemplate="header" let-columns>
+      <tr>
+          <th *ngFor="let col of columns" [pSortableColumn]="col.field">
+              {{col.header}}
+              <p-sortIcon [field]="col.field"></p-sortIcon>
+          </th>
+      </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-rowData let-columns="columns">
+      <tr [pSelectableRow]="rowData">
+          <td *ngFor="let col of columns">
+              {{rowData[col.field]}}
+          </td>
+      </tr>
+  </ng-template>
+  <ng-template pTemplate="summary" let-rowData>
+      <div style="text-align:left">
+          <button ng class="btn-btn-secondary" type="button" pButton icon="fa fa-plus" (click)="showDialogToAdd()" >Add</button>
+      </div>
+  </ng-template>
+</p-table>
+
+<p-dialog header="Car Details" [(visible)]="displayDialog" [responsive]="true" showEffect="fade" [modal]="true"  [style]="{width: '300px'}">
+  <form (ngSubmit)="AddEmployee(f.value)" #f="ngForm">
+  <div class="ui-g ui-fluid" *ngIf="arr">
+
+    <div class="ui-g-12">
+          <div class="ui-g-4">
+              <label for="id">Id</label>
+          </div>
+          <div class="ui-g-8">
+              <input pInputText id="id"  [(ngModel)]="arr.id" />
+          </div>
+      </div>
+      <div class="ui-g-12">
+          <div class="ui-g-4">
+              <label for="name">Name</label>
+          </div>
+          <div class="ui-g-8">
+              <input pInputText id="name" [(ngModel)]="arr.name" />
+          </div>
+      </div>
+      <div class="ui-g-12">
+          <div class="ui-g-4">
+              <label for="description">Description</label>
+          </div>
+          <div class="ui-g-8">
+              <input pInputText id="description" [(ngModel)]="arr.description" />
+          </div>
+      </div>
+      <button class="btn-btn-primary" type="submit" pButton icon="fa fa-check" >Save</button>
+      <button class="btn-btn-danger" type="button" pButton icon="fa fa-close" (click)="delete()" >Delete</button>
+
+  </div>
+</form>
+  <!-- <p-footer>
+      <div class="ui-dialog-buttonpane ui-helper-clearfix">
+          <button class="btn-btn-danger" type="button" pButton icon="fa fa-close" (click)="delete()" >Delete</button>
+          <button class="btn-btn-primary" type="submit" pButton icon="fa fa-check" >Save</button>
+      </div>
+  </p-footer> -->
+</p-dialog>
+
+<!-- Table End -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <!-- Container (The Band Section) -->
 <div id="band" class="container text-center">
@@ -234,29 +335,29 @@
   <br>
   <h3 class="text-center">From The Blog</h3>
   <ul class="nav nav-tabs">
-    <li class="active"><a data-toggle="tab" href="#home">Mike</a></li>
-    <li><a data-toggle="tab" href="#menu1">Chandler</a></li>
-    <li><a data-toggle="tab" href="#menu2">Peter</a></li>
+    <li class="active"><a data-toggle="tab" href="#home">Shivu</a></li>
+    <li><a data-toggle="tab" href="#menu1">Vinay</a></li>
+    <li><a data-toggle="tab" href="#menu2">Sujit</a></li>
   </ul>
 
   <div class="tab-content">
     <div id="home" class="tab-pane fade in active">
-      <h2>Mike Ross, Manager</h2>
+      <h2>Shivu, Manager In SkycliffIt</h2>
       <p>Man, we've been on the road for some time now. Looking forward to lorem ipsum.</p>
     </div>
     <div id="menu1" class="tab-pane fade">
-      <h2>Chandler Bing, Guitarist</h2>
+      <h2>Sujit, Team Member</h2>
       <p>Always a pleasure people! Hope you enjoyed it as much as I did. Could I BE.. any more pleased?</p>
     </div>
     <div id="menu2" class="tab-pane fade">
-      <h2>Peter Griffin, Bass player</h2>
+      <h2>Vinay, FootBall player</h2>
       <p>I mean, sometimes I enjoy the show, but other times I enjoy other things.</p>
     </div>
   </div>
 </div>
 
 <!-- Image of location/map -->
-<img src="map.jpg" class="img-responsive" style="width:100%">
+<!-- <img src="map.jpg" class="img-responsive" style="width:100%"> -->
 
 <!-- Footer -->
 <!-- <footer class="text-center">

@@ -1,0 +1,54 @@
+<app-sidebar></app-sidebar>
+<p class="h1">mdbtable works!</p>
+
+<marquee><h2><i style="color: rgb(235, 13, 13);">SkyCliff It Dharwad..</i></h2></marquee>
+<!-- Editable table -->
+<div class="card">
+    <h3 class="card-header text-center font-weight-bold text-uppercase py-4">Editable table</h3>
+    <div class="card-body">
+      <div id="table" class="table-editable">
+        <span class="table-add float-right mb-3 mr-2">
+          <a class="text-success" (click)="add()">
+            <button class="btn btn-primary" type="submit">button</button>
+            <!-- <mdb-icon fas icon="plus" size="2x"></mdb-icon> -->
+          </a>
+        </span>
+        <table class="table table-bordered table-responsive-md table-striped text-center">
+          <tr>
+            <th class="text-center">Id</th>
+            <th class="text-center">Name</th>
+            <th class="text-center">Description</th>
+            <!-- <th class="text-center">Sort</th> -->
+            <th class="text-center">Remove</th>
+          </tr>
+          <tr *ngFor="let item of arr">
+            <td>
+              <span  >{{id}}</span>
+            </td>
+            <td>
+              <span  >{{name}}</span>
+            </td>
+            <td>
+                <span >{{description}}</span>
+              </td>
+            <td>
+              <span class="table-remove">
+                <button type="button" mdbBtn color="danger" rounded="true" size="sm" class="my-0" (click)="remove(id)">Remove</button>
+              </span>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <!-- Editable table -->
+  <!-- <td>
+      <span (keyup)="changeValue(id, 'id', $event)" (blur)="updateList(id, 'id', $event)" contenteditable="true">{{id}}</span>
+    </td>
+    <td>
+      <span contenteditable="true" (keyup)="changeValue(id, 'name', $event)" (blur)="updateList(id, 'name', $event)">{{name}}</span>
+    </td>
+    <td>
+        <span contenteditable="true" (keyup)="changeValue(id, 'description', $event)" (blur)="updateList(id, 'description', $event)">{{description}}</span>
+      </td>
+    <td> -->

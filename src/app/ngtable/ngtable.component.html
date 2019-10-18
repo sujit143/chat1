@@ -1,0 +1,111 @@
+<app-sidebar></app-sidebar>
+<h1>ngtable works!</h1>
+
+
+
+<!-- <p>This is a more complete example with a service that simulates server calling:</p>
+<ul>
+  <li>an observable async service to fetch a list of countries</li>
+  <li>sorting, filtering and pagination</li>
+  <li>simulated delay and loading indicator</li>
+  <li>debouncing of search requests</li>
+</ul> -->
+
+<form>
+  <div class="container">
+  <div class="form-group form-inline">
+      <b>Full text search:</b> <input class="form-control ml-2" type="text" name="searchTerm" placeholder="Search Here" [(ngModel)]="service.searchTerm"/>
+      <span class="ml-3" *ngIf="service.loading$ | async">Loading...</span>
+  </div>
+
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col" sortable="name" (sort)="onSort($event)">Country</th>
+      <th scope="col" sortable="area" (sort)="onSort($event)">Area</th>
+      <th scope="col" sortable="population" (sort)="onSort($event)">Population</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let country of countries$ | async">
+      <th scope="row">{{ country.id }}</th>
+      <td>
+        <img [src]="'https://upload.wikimedia.org/wikipedia/commons/' + country.flag" class="mr-2" style="width: 20px">
+        <ngb-highlight [result]="country.name" [term]="service.searchTerm"></ngb-highlight>
+      </td>
+      <td><ngb-highlight [result]="country.area | number" [term]="service.searchTerm"></ngb-highlight></td>
+      <td><ngb-highlight [result]="country.population | number" [term]="service.searchTerm"></ngb-highlight></td>
+    </tr>
+    </tbody>
+  </table>
+
+  <div class="d-flex justify-content-between p-2">
+    <ngb-pagination
+      [collectionSize]="total$ | async" [(page)]="service.page" [pageSize]="service.pageSize">
+    </ngb-pagination>
+
+    <select class="custom-select" style="width: auto" name="pageSize" [(ngModel)]="service.pageSize">
+      <option [ngValue]="2">2 items per page</option>
+      <option [ngValue]="4">4 items per page</option>
+      <option [ngValue]="6">6 items per page</option>
+    </select>
+  </div>
+</div>
+</form>
+
+
+<!-- <h3>
+    Fancy display heading
+    <small class="text-muted">With faded secondary text</small>
+  </h3> -->
+  <p><abbr title="HyperText Markup Language" class="initialism">HTML</abbr></p>
+
+
+
+  <dl class="row">
+      <dt class="col-sm-3">Description lists</dt>
+      <dd class="col-sm-9">A description list is perfect for defining terms.</dd>
+
+      <dt class="col-sm-3">Euismod</dt>
+      <dd class="col-sm-9">
+        <p>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</p>
+        <p>Donec id elit non mi porta gravida at eget metus.</p>
+      </dd>
+
+      <dt class="col-sm-3">Malesuada porta</dt>
+      <dd class="col-sm-9">Etiam porta sem malesuada magna mollis euismod.</dd>
+
+      <dt class="col-sm-3 text-truncate">Truncated term is truncated</dt>
+      <dd class="col-sm-9">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</dd>
+
+      <dt class="col-sm-3">Nesting</dt>
+      <dd class="col-sm-9">
+        <dl class="row">
+          <!-- <dt class="col-sm-4">Nested definition list</dt> -->
+          <dd class="col-sm-8">Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc.</dd>
+        </dl>
+      </dd>
+    </dl>
+
+
+
+
+    <!-- Footer Start -->
+
+    <footer class="page-footer font-small blue pt-4">
+        <div class="">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 footer-center text-left"> <img src="assets/logo.png" alt=""> </div>
+                    <div class="col-md-6 footer-left text-left text-center">
+                        © 2018 All Rights Reserved for Skycliff IT PVT. LTD
+                    </div>
+                    <i class="fa fa-facebook text-xs circle"></i>
+                </div>
+            </div>
+        </div>
+      </footer>
+
+
+    <!-- Footer End -->
