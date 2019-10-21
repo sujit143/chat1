@@ -16,7 +16,7 @@ import { ContactComponent } from './contact/contact.component';
 import { PipeComponent } from './pipe/pipe.component';
 import { ReversePipe } from './reverse.pipe';
 import {TableModule} from 'primeng/table';
-import {MessageService} from 'primeng/api';
+import {MessageService, ConfirmationService} from 'primeng/api';
 import {ToastModule} from 'primeng/toast';
 import {ContextMenuModule} from 'primeng/primeng';
 import {CaptchaModule} from 'primeng/captcha';
@@ -29,10 +29,12 @@ import { NgtableComponent } from './ngtable/ngtable.component';
 import { ContextComponent } from './context/context.component';
 // import { NgbdSortableHeader } from './sortable.directive';
 // import { NgbdTableComplete } from './table-complete';
-import {MatMenuModule, MatTableModule } from '@angular/material';
+import {MatMenuModule, MatTableModule, MatCheckboxModule } from '@angular/material';
 import { MdbtableComponent } from './mdbtable/mdbtable.component';
 import { ToastrModule } from 'ngx-toastr';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { ConfiermationComponent } from './emp/confiermation/confiermation.component';
+import {MatDialogModule} from '@angular/material/dialog';
 
 
 
@@ -51,7 +53,8 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
     LoginComponent,
     NgtableComponent,
     ContextComponent,
-    MdbtableComponent
+    MdbtableComponent,
+    ConfiermationComponent
   ],
 
   imports: [
@@ -74,13 +77,16 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
     MatMenuModule,
     MatTableModule,
     ToastrModule.forRoot(),
-    MDBBootstrapModule
+    MDBBootstrapModule,
+    MatDialogModule,
+    MatCheckboxModule
     // NgbdSortableHeader,
     // NgbdTableComplete
     // NgbdCarouselBasicModule
 
   ],
-  providers: [MessageService],
-  bootstrap: [AppComponent]
+  providers: [MessageService,ConfirmationService],
+  bootstrap: [AppComponent],
+  entryComponents: [ ConfiermationComponent ],
 })
 export class AppModule { }

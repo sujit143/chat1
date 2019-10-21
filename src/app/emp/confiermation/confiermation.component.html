@@ -1,0 +1,7 @@
+<div mat-dialog-content>
+  <p>Do you want to Delete?</p>
+  </div>
+  <div mat-dialog-actions>
+  <button mat-button [mat-dialog-close]="data.id" (click)="onUserDelete(data.id)" cdkFocusInitial>Ok</button>&nbsp;&nbsp;
+  <button mat-button (click)="onNoClick()">No</button>
+  </div>

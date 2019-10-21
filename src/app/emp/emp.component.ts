@@ -4,6 +4,8 @@ import { EmpService } from '../emp.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { map} from "rxjs/operators";
 import { NgForm } from '@angular/forms';
+import { MatDialog } from '@angular/material';
+import { ConfiermationComponent } from './confiermation/confiermation.component';
 
 @Component({
   selector: 'app-emp',
@@ -19,7 +21,7 @@ export class EmpComponent implements OnInit {
 name:string;
 description:string;
 
-  constructor(private _data:EmpService,private route: ActivatedRoute, private router: Router) {
+  constructor(private _data:EmpService,private route: ActivatedRoute, private router: Router, public dialog: MatDialog) {
   this.config = {
     currentPage: 1,
     itemsPerPage: 8
@@ -49,15 +51,36 @@ pageChange(newPage: number) {
     }
   );
  }
- onEmpDel(id:number){
-  this._data.delEmployee(id).subscribe(
-    (data:any)=>{
-      this.ngOnInit();
-      alert("delete");
-    }
+
+
+ onEmpDel(id:number): void {
+  // this._data.delEmployee(id).subscribe(
+  //   (data:any)=>{
+  //     this.ngOnInit();
+  //     alert("delete");
+  //   }
+  //   );
+  console.log('sid:', id);
+  const dialogRef = this.dialog.open(ConfiermationComponent, {
+    width: '250px',
+    data: { id: id }
+  });
+
+
+  dialogRef.afterClosed().subscribe(result => {
+    this.id = result;
+    // this.toGetData();
+    this._data.delEmployee(this.id).subscribe (
+      () => {
+        alert('deleted');
+        this.ngOnInit();
+      }
     );
-    }
-  editemployeeget(item)
+    });
+  }
+
+
+    editemployeeget(item)
   {
      this.id=item.id;
      this.name=item.name;

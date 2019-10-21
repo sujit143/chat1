@@ -4,6 +4,7 @@ import { EmpService } from '../emp.service';
 import { MatMenuTrigger, MatTableDataSource } from '@angular/material';
 import { NgForm } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
+import { SelectionModel } from '@angular/cdk/collections';
 
 @Component({
   selector: 'app-context',
@@ -15,12 +16,13 @@ export class ContextComponent implements OnInit {
   images = [1, 2, 3].map(() => `https://picsum.photos/900/500?random&t=${Math.random()}`);
 
 
-  displayedColumns: string[] = ['id','name','description'];
+  displayedColumns: string[] = ['select','id','name','description'];
   arr:Emp[]=[];
   dataSource = new MatTableDataSource<Emp>();
   id: number;
   name: string;
   description: string;
+  selection = new SelectionModel<Emp>(true, []);
 
 
   constructor(private _data:EmpService,private toastr:ToastrService) { }
@@ -47,6 +49,26 @@ export class ContextComponent implements OnInit {
      this.contextMenu.menuData = { 'item': item };
      this.contextMenu.openMenu();
    }
+   isAllSelected() {
+    const numSelected = this.selection.selected.length;
+    const numRows = this.dataSource.data.length;
+    return numSelected === numRows;
+  }
+   removeSelectedRows() {
+
+    this.selection.selected.forEach(item => {
+      let index: number = this.arr.findIndex(d => d === item);
+      console.log(this.arr.findIndex(d => d === item));
+      this.arr.splice(index,1)
+      this.dataSource = new MatTableDataSource<Emp>(this.arr);
+    });
+    this.selection = new SelectionModel<Emp>(true, []);
+  }
+  masterToggle() {
+    this.isAllSelected() ?
+      this.selection.clear() :
+      this.dataSource.data.forEach(row => this.selection.select(row));
+  }
 
    onContextMenuAction1(id:number) {
   //    alert(`Click on Action 1 for ${item.name}`);

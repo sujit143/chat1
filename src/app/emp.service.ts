@@ -7,9 +7,9 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class EmpService {
 
-  url: string = 'https://5f0c803e.ngrok.io/api/Settings/GetDesignations';
-  delurl: String = 'https://5f0c803e.ngrok.io/api/Settings/DeleteDesignation?DesignationId=';
-  editurl: string = 'https://5f0c803e.ngrok.io/api/Settings/InsUpdateDesignation';
+  url: string = 'https://3df52e24.ngrok.io/api/Settings/GetDesignations';
+  delurl: String = 'https://3df52e24.ngrok.io/api/Settings/DeleteDesignation?DesignationId=';
+  editurl: string = 'https://3df52e24.ngrok.io/api/Settings/InsUpdateDesignation';
   constructor(private _http: HttpClient) { }
 
   getAllEmployee() {
