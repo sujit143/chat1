@@ -9,6 +9,7 @@ import { NavComponent } from './nav/nav.component';
 import { NgtableComponent } from './ngtable/ngtable.component';
 import { ContextComponent } from './context/context.component';
 import { MdbtableComponent } from './mdbtable/mdbtable.component';
+import { TreetableComponent } from './treetable/treetable.component';
 
 
 const arr : Routes=[
@@ -22,7 +23,8 @@ const arr : Routes=[
   {path:'',component:LoginComponent},
   {path:'ngtable',component:NgtableComponent},
   {path:'context',component:ContextComponent},
-  {path:'mdbtable',component:MdbtableComponent}
+  {path:'mdbtable',component:MdbtableComponent},
+  {path:'tree',component:TreetableComponent}
 
 ];
 

@@ -46,6 +46,10 @@
       <i class="fa fa-table"></i>&nbsp;
       MdbTable
     </a><br><br>
+    <a [routerLink]="['/tree']" [routerLinkActive]="['router-link-active']" >
+      <i class="fa fa-table"></i>&nbsp;
+      TreeTable
+    </a><br><br>
   </p-sidebar>
 
   <li *ngIf="!isLoggedIn()" routerLinkActive="active"><a  routerLink="/login">Login</a></li>

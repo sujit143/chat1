@@ -35,6 +35,10 @@ import { ToastrModule } from 'ngx-toastr';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { ConfiermationComponent } from './emp/confiermation/confiermation.component';
 import {MatDialogModule} from '@angular/material/dialog';
+import { TreetableComponent } from './treetable/treetable.component';
+import {TreeTableModule} from 'primeng/treetable';
+
+import { NodeService } from './node.service';
 
 
 
@@ -54,7 +58,9 @@ import {MatDialogModule} from '@angular/material/dialog';
     NgtableComponent,
     ContextComponent,
     MdbtableComponent,
-    ConfiermationComponent
+    ConfiermationComponent,
+    TreetableComponent
+
   ],
 
   imports: [
@@ -79,13 +85,15 @@ import {MatDialogModule} from '@angular/material/dialog';
     ToastrModule.forRoot(),
     MDBBootstrapModule,
     MatDialogModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    TreeTableModule,
+
     // NgbdSortableHeader,
     // NgbdTableComplete
     // NgbdCarouselBasicModule
 
   ],
-  providers: [MessageService,ConfirmationService],
+  providers: [MessageService,ConfirmationService,NodeService],
   bootstrap: [AppComponent],
   entryComponents: [ ConfiermationComponent ],
 })
