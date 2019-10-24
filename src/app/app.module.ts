@@ -39,6 +39,7 @@ import { TreetableComponent } from './treetable/treetable.component';
 import {TreeTableModule} from 'primeng/treetable';
 
 import { NodeService } from './node.service';
+import { TreefilterComponent } from './treefilter/treefilter.component';
 
 
 
@@ -59,7 +60,8 @@ import { NodeService } from './node.service';
     ContextComponent,
     MdbtableComponent,
     ConfiermationComponent,
-    TreetableComponent
+    TreetableComponent,
+    TreefilterComponent
 
   ],
 

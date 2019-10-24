@@ -50,6 +50,10 @@
       <i class="fa fa-table"></i>&nbsp;
       TreeTable
     </a><br><br>
+    <a [routerLink]="['/filter']" [routerLinkActive]="['router-link-active']" >
+      <i class="fa fa-table"></i>&nbsp;
+      TreeFilter
+    </a><br><br>
   </p-sidebar>
 
   <li *ngIf="!isLoggedIn()" routerLinkActive="active"><a  routerLink="/login">Login</a></li>

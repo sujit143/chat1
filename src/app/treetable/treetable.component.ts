@@ -35,7 +35,7 @@ export class TreetableComponent implements OnInit {
 }
 
 viewFile(node) {
-    this.messageService.add({ severity: 'info', summary: 'File Selected', detail: node.data.name + ' - ' + node.data.size });
+    this.messageService.add({ severity: 'info', summary: 'File Selected', detail: node.data.name + ' - ' + node.data.size + ' - ' + node.data.type });
 }
 
 toggleFile(node) {
