@@ -1,0 +1,12 @@
+.kb-row {
+  background-color: #1CA979 !important;
+  color: #ffffff !important;
+}
+
+.kb-cell {
+  background-color: #2CA8B1 !important;
+  color: #ffffff !important;
+}
+p {
+  font-family: Lato;
+}

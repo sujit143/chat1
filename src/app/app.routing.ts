@@ -11,6 +11,7 @@ import { ContextComponent } from './context/context.component';
 import { MdbtableComponent } from './mdbtable/mdbtable.component';
 import { TreetableComponent } from './treetable/treetable.component';
 import { TreefilterComponent } from './treefilter/treefilter.component';
+import { DeepavaliComponent } from './deepavali/deepavali.component';
 
 
 const arr : Routes=[
@@ -26,7 +27,8 @@ const arr : Routes=[
   {path:'context',component:ContextComponent},
   {path:'mdbtable',component:MdbtableComponent},
   {path:'tree',component:TreetableComponent},
-  {path:'filter',component:TreefilterComponent}
+  {path:'filter',component:TreefilterComponent},
+  {path:'deepa',component:DeepavaliComponent}
 
 ];
 

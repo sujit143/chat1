@@ -38,6 +38,13 @@
 </p-treeTable> -->
 
 
+
+<marquee>
+  <h1>Edit Table</h1>
+</marquee>
+
+<!-- Edit Table Start-->
+
 <p-treeTable [value]="files" [columns]="cols">
   <ng-template pTemplate="header" let-columns>
       <tr>
@@ -60,3 +67,157 @@
       </tr>
   </ng-template>
 </p-treeTable>
+
+<!-- Edit Table End -->
+
+<marquee>
+  <h1>Style Table</h1>
+</marquee>
+
+<!-- Style Table Satart -->
+
+<p-treeTable [value]="files" [columns]="cols">
+  <ng-template pTemplate="header" let-columns>
+      <tr>
+          <th *ngFor="let col of columns">
+              {{col.header}}
+          </th>
+      </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-rowNode let-rowData="rowData" let-columns="columns">
+      <tr [ngClass]="{'kb-row': rowData.size.endsWith('kb')}">
+          <td *ngFor="let col of columns; let i = index" [ngClass]="{'kb-cell': col.field === 'size' && rowData.size.endsWith('kb')}">
+              <p-treeTableToggler [rowNode]="rowNode" *ngIf="i == 0"></p-treeTableToggler>
+              {{rowData[col.field]}}
+          </td>
+      </tr>
+  </ng-template>
+</p-treeTable>
+
+<!-- Style Table End -->
+
+<marquee>
+  <h1>Responsive Table</h1>
+</marquee>
+
+<!-- responsive start -->
+
+<p-treeTable [value]="files">
+  <ng-template pTemplate="header">
+      <tr>
+          <th>Name</th>
+          <th class="priority-2">Size</th>
+          <th class="priority-3">Type</th>
+      </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-rowNode let-rowData="rowData">
+      <tr>
+          <td>
+              <p-treeTableToggler [rowNode]="rowNode"></p-treeTableToggler>
+              {{rowData.name}}
+              <span class="visibility-sm">
+                  / {{rowData.size}} - {{rowData.type}}
+              </span>
+          </td>
+          <td class="priority-2">{{rowData.size}}</td>
+          <td class="priority-3">{{rowData.type}}</td>
+      </tr>
+  </ng-template>
+</p-treeTable>
+
+<!-- responsive end -->
+
+<marquee>
+  <h1>Toggale Table</h1>
+</marquee>
+
+<!-- Toggale Start -->
+
+<p-treeTable [value]="files" [columns]="selectedColumns">
+  <ng-template pTemplate="caption">
+      <div style="text-align:left">
+          <p-multiSelect [options]="cols" [(ngModel)]="selectedColumns" optionLabel="header"
+                      selectedItemsLabel="{0} columns selected" [style]="{minWidth: '200px'}" defaultLabel="Choose Columns"></p-multiSelect>
+      </div>
+  </ng-template>
+  <ng-template pTemplate="header" let-columns>
+      <tr>
+          <th *ngFor="let col of columns">
+              {{col.header}}
+          </th>
+      </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-rowNode let-rowData="rowData" let-columns="columns">
+      <tr>
+          <td *ngFor="let col of columns; let i = index">
+              <p-treeTableToggler [rowNode]="rowNode" *ngIf="i == 0"></p-treeTableToggler>
+              {{rowData[col.field]}}
+          </td>
+      </tr>
+  </ng-template>
+</p-treeTable>
+
+<!-- Toggale End -->
+
+<marquee>
+  <h1>Ngx Mask</h1>
+</marquee>
+
+<!-- ngx mask start -->
+
+<div class="input-group">
+  <input type="text" class="form-control" mask="999-99-999-9999-9" placeholder="ISBN 1" aria-label="ISBN 1 13 digits only">
+  <span class="help-block">999-99-999-9999-9</span>
+</div>
+
+<div class="input-group">
+  <input type="text" class="form-control" mask="(999) 999-9999" placeholder="Telephone Number" aria-label="Telephone number 10 digits only">
+  <span class="help-block">(999) 999-9999</span>
+</div>
+
+<div class="input-group">
+  <input type="text" class="form-control" mask="09/09/9999" placeholder="Date" aria-label="Date">
+  <span class="help-block">09/09/9999</span>
+</div>
+
+<div class="input-group">
+  <input type="text" class="form-control" mask="099.099.099.099" placeholder="IP Address" aria-label="IP address">
+  <span class="help-block">099.099.099.099</span>
+</div>
+
+<!-- ngx mask end -->
+
+
+
+
+<marquee>
+  <h1>Dark Web</h1>
+</marquee>
+
+<!-- DarkTable Satrt -->
+
+<amexio-darkmode [mode]="'sepia'" [shape]="'round'" [size]="'small'"></amexio-darkmode>
+
+<amexio-darkmode [mode]="'sepia'" [shape]="'square'" [size]="'small'"></amexio-darkmode>
+
+
+<!-- Dark Table End -->
+
+
+<marquee>
+  <h1>Dark Web</h1>
+</marquee>
+
+<amexio-carousel [header]="'Gallery With Auto Shuffle (2 seconds)'"
+                 [data]="[1,2,3,4,5,6,7,8,9,10,11]"
+                 shuffle-interval="2000">
+  <ng-template let-gallery amexioTemplate="item">
+      <amexio-image [height]="'300px'"
+                    path="assets/{{gallery}}.jpg">
+      </amexio-image>
+  </ng-template>
+</amexio-carousel>
+
+
+
+

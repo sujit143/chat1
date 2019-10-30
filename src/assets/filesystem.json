@@ -53,7 +53,7 @@
           "data":{
               "name":"Pictures",
               "size":"150kb",
-              "type":"Folder"
+              "type":"Package"
           },
           "children":[
               {
@@ -78,6 +78,85 @@
                   }
               }
           ]
-      }
+      },
+      {
+        "data":{
+            "name":"Images",
+            "size":"21kb",
+            "type":"Application"
+        },
+        "children":[
+            {
+                "data":{
+                    "name":"Work",
+                    "size":"55kb",
+                    "type":"Folder"
+                },
+                "children":[
+                    {
+                        "data":{
+                            "name":"Expenses.doc",
+                            "size":"30kb",
+                            "type":"Document"
+                        }
+                    },
+                    {
+                        "data":{
+                            "name":"Resume.doc",
+                            "size":"25kb",
+                            "type":"Resume"
+                        }
+                    }
+                ]
+            },
+            {
+                "data":{
+                    "name":"Home",
+                    "size":"20kb",
+                    "type":"Folder"
+                },
+                "children":[
+                    {
+                        "data":{
+                            "name":"Invoices",
+                            "size":"20kb",
+                            "type":"Text"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+      "data":{
+          "name":"Video",
+          "size":"12gb",
+          "type":"New"
+      },
+      "children":[
+          {
+              "data":{
+                  "name":"barcelona.jpg",
+                  "size":"6gb",
+                  "type":"Picture"
+              }
+          },
+          {
+              "data":{
+                  "name":"primeui.png",
+                  "size":"5gb",
+                  "type":"Picture"
+              }
+          },
+          {
+              "data":{
+                  "name":"optimus.jpg",
+                  "size":"1024kb",
+                  "type":"Picture"
+              }
+          }
+      ]
+  }
+
   ]
 }

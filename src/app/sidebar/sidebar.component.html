@@ -2,7 +2,8 @@
   <button pButton type="button" (click)="visibleSidebar1 = true" (mouseenter) ="mouseEnter()" ><i class="fa fa-menu" ></i>Task ☰</button>
   <h2>SkyCliff IT</h2>
   <h3>{{todaydate | date:'d/M/y'}}</h3><br/>
-  <h3>{{todaydate | date:'HH:mm:ss'}}</h3>
+  <h3>{{todaydate | date:'HH:mm:ss'}}</h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <amexio-darkmode [type]="1" [field-label]="'Day'" shape="Square"></amexio-darkmode>
 </mat-toolbar>
 
 <p-sidebar [(visible)]="visibleSidebar1" [baseZIndex]="10000" class="bg-dark" >
@@ -54,7 +55,17 @@
       <i class="fa fa-table"></i>&nbsp;
       TreeFilter
     </a><br><br>
+    <a [routerLink]="['/deepa']" [routerLinkActive]="['router-link-active']" >
+      <i class="fa fa-table"></i>&nbsp;
+      Deepavali
+    </a><br><br>
   </p-sidebar>
 
   <li *ngIf="!isLoggedIn()" routerLinkActive="active"><a  routerLink="/login">Login</a></li>
   <li *ngIf="isLoggedIn()" routerLinkActive="active"><a (click)="onLogOut()" >Log Out</a></li>
+
+
+
+
+
+

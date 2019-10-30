@@ -40,7 +40,10 @@ import {TreeTableModule} from 'primeng/treetable';
 
 import { NodeService } from './node.service';
 import { TreefilterComponent } from './treefilter/treefilter.component';
-
+import { MultiSelectModule } from 'primeng/multiselect';
+import { NgxMaskModule } from 'ngx-mask';
+import { AmexioWidgetModule } from 'amexio-ng-extensions';
+import { DeepavaliComponent } from './deepavali/deepavali.component'; // Import Amexio library
 
 
 
@@ -61,7 +64,8 @@ import { TreefilterComponent } from './treefilter/treefilter.component';
     MdbtableComponent,
     ConfiermationComponent,
     TreetableComponent,
-    TreefilterComponent
+    TreefilterComponent,
+    DeepavaliComponent
 
   ],
 
@@ -89,6 +93,9 @@ import { TreefilterComponent } from './treefilter/treefilter.component';
     MatDialogModule,
     MatCheckboxModule,
     TreeTableModule,
+    MultiSelectModule,
+    NgxMaskModule.forRoot(),
+    AmexioWidgetModule
 
     // NgbdSortableHeader,
     // NgbdTableComplete
